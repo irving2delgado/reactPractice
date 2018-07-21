@@ -9,8 +9,38 @@ class App extends Component {
       isLoaded: false,
       results: {}
     };
+    
+    this.createPlayer = this.createPlayer.bind(this);
   }
 
+    createPlayer() {
+      
+        fetch("https://randomuser.me/api/?gender=male&nat=uss")
+          .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+               results: result.results
+              });
+    
+              console.log(this.state.results);
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+          .then(
+            console.log(this.state.results)
+          )
+      }
+    
 
   componentDidMount() {
     fetch("https://randomuser.me/api/?gender=male&nat=uss")
@@ -21,6 +51,8 @@ class App extends Component {
             isLoaded: true,
            results: result.results
           });
+
+          console.log(this.state.results);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -60,7 +92,7 @@ class App extends Component {
     return (
       <div className="App">
         my app
-        <button onClick={() => {}}>This is a button</button>
+        <button onClick={this.createPlayer}>This is a button</button>
 
         <div className="new-player">
         
