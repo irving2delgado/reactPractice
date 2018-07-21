@@ -11,6 +11,7 @@ class App extends Component {
     };
     
     this.createPlayer = this.createPlayer.bind(this);
+    this.getRandomInt = this.getRandomInt.bind(this);
   }
 
     createPlayer() {
@@ -25,6 +26,7 @@ class App extends Component {
               });
     
               console.log(this.state.results);
+              console.log(this.props.player)
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -39,6 +41,8 @@ class App extends Component {
           .then(
             console.log(this.state.results)
           )
+          return 
+        <div>{this.state}</div>
       }
     
 
@@ -53,7 +57,9 @@ class App extends Component {
           });
 
           console.log(this.state.results);
+         
         },
+        
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
@@ -66,8 +72,18 @@ class App extends Component {
       )
   }
 
+   getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
+  
   render() {
+    var player = {
+      shooting: getRandomInt(60,100),
+    
+  }
+    
+    console.log(this.props);
    console.log(this.state.results);
     function getRandomInt(min, max) {
   		return Math.floor(Math.random() * (max - min + 1)) + min;
