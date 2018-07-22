@@ -5,11 +5,12 @@ class IconBox extends Component  {
         super(props);
     }
   
+    const 
     render () {
         console.log(this.props.info);
         return(
             <div>
-
+                {this.props.info.data[0].bio}
             </div>
         )
     }
