@@ -25,8 +25,8 @@ class App extends Component {
                results: result.results
               });
     
-              console.log(this.state.results);
-              console.log(this.props.player)
+              // console.log(this.state.results);
+              // console.log(this.props.player);
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -42,8 +42,8 @@ class App extends Component {
             console.log(this.state.results)
           )
           return 
-        <div>{this.state}</div>
-      }
+        (<div>{this.state.results[0].name.first}</div>);
+      };
     
 
   componentDidMount() {
@@ -56,7 +56,7 @@ class App extends Component {
            results: result.results
           });
 
-          console.log(this.state.results);
+          // console.log(this.state.results);
          
         },
         
@@ -82,8 +82,8 @@ class App extends Component {
     
   }
     
-    console.log(this.props);
-   console.log(this.state.results);
+    // console.log(this.props);
+  //  console.log(this.state.results);
     function getRandomInt(min, max) {
   		return Math.floor(Math.random() * (max - min + 1)) + min;
     }
