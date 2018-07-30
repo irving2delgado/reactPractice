@@ -5,104 +5,7 @@ import IconBox from "./iconBox"
 class SocialCard extends Component {
 
     render () {
-        const Photo = {
-            width: '60px',
-            height: '60px',
-            backgroundSize: 'cover',
-            borderRadius: '50%',
-            margin: '10px'
-          };
-          
-          const bold = {
-            fontWeight: 'bold',
-          }
-          
-          const flex = {
-            display: 'flex'
-          }
-          
-          const list = {
-            listStyleType: 'none',
-          }
-          
-          const ADbox = {
-            height: '315px',
-            width: '550px',
-            borderRadius: '10px 10px 10px 10px',
-            border: '1px solid #e5e5e5',
-            marginTop: '10px'
-          }
-          
-          const boximg = {
-            width: '400px',
-          }
-          
-          const icon = {
-            height: '20px',
-            paddingLeft: '10px'
-          }
-          
-          const picbox = {
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 35%',
-            width: '550px',
-            height: '200px',
-            borderRadius: '10px 10px 0px 0px',
-          }
-          
-          const wordbox = {
-            padding: '15px',
-            fontSize: '14px',
-            lineHeight: '21px',
-          }
-          
-          const gray = {
-            color: '#aaa'
-          }
-          
-          const iconword = {
-            fontSize: '10px',
-            paddingLeft: '10px',
-            paddingRight: '50px',
-            position: 'realative',
-          }
-          
-          const red = {
-            color: 'red',
-            fontWeight: 'bold'
-          }
-          
-          const iconbox = {
-            marginTop: '15px'
-          }
-          
-          const largebox = {
-            fontSize: '14px',
-            lineHeight: '21px',
-            border: '1px solid #eee',
-            borderRadius: '5px',
-            backgroundColor: 'white',
-            boxShadow: '3px 5px 10px #9b7c6c',
-            width: '650px',
-            margin: '20px auto',
-            padding: '15px',
-            justifyContent: 'center'
-          }
-          
-          const blue = {
-            color: '#7ABBE7'
-          }
-          
-          const listspace = {
-            marginLeft: '10px'
-          }
-          
-          const hrwidth = {
-            width: '650px',
-            margin: '10px 0px 10px 0px',
-            borderColor: '#fff'
-          }
-
+        
           var info = { data: [
         {
           id: 1,
@@ -134,10 +37,19 @@ class SocialCard extends Component {
         }
       ]
     }
-          
+          console.log(this.props);
         return(
-            <div>Hello there
-                <IconBox info={info} />
+            <div>
+                <ul>
+                {this.props.state.results.map((result, i) => 
+                       <li key={i} >
+                        {result.name.first}
+                        <IconBox info={info} results={this.props.state.results}/>
+                       </li>
+                       
+                   )}
+                </ul>
+                
             </div>
         )
     }

@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import SocialCard from './socialCard';
+import axios from 'axios';
 
 class App extends Component {
   constructor (props) {
     super(props);
     this.state = { error: null,
       isLoaded: false,
-      results: {}
+      results: []
     };
+
     
-    this.createPlayer = this.createPlayer.bind(this);
+    
+    // this.createPlayer = this.createPlayer.bind(this);
     this.getRandomInt = this.getRandomInt.bind(this);
   }
 
-    createPlayer() {
+    /* createPlayer() {
       
         fetch("https://randomuser.me/api/?gender=male&nat=uss")
           .then(res => res.json())
@@ -43,10 +46,10 @@ class App extends Component {
           )
           return 
         (<div>{this.state.results[0].name.first}</div>);
-      };
+      }; */
     
 
-  componentDidMount() {
+ /* componentDidMount() {
     fetch("https://randomuser.me/api/?gender=male&nat=uss")
       .then(res => res.json())
       .then(
@@ -58,7 +61,7 @@ class App extends Component {
 
           // console.log(this.state.results);
          
-        },
+        }, 
         
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -70,17 +73,36 @@ class App extends Component {
           });
         }
       )
+  } */
+
+  componentDidMount(){
+    // this.getPerson();
+    axios.get("https://randomuser.me/api/?gender=male&nat=uss&results=20")
+    .then(response => {
+      this.setState({results: response.data.results}, (state) => {
+        console.log(this.state)
+      })
+    })
   }
 
    getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  getPerson(){
+    axios.get("https://randomuser.me/api/?gender=male&nat=uss&results=20")
+    .then(response => {
+      this.setState({results: response.data.results}, (state) => {
+        console.log(this.state)
+      })
+    })
+  };
+
   render() {
-    var player = {
-      shooting: getRandomInt(60,100),
+  //   var player = {
+  //     shooting: getRandomInt(60,100),
     
-  }
+  // }
     
     // console.log(this.props);
   //  console.log(this.state.results);
@@ -88,22 +110,17 @@ class App extends Component {
   		return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     
-    const shootingIn = getRandomInt(20,70);
-	  const shootingOut = getRandomInt(60,100);
-	  const handling = getRandomInt(60,100);
-	  const passing = getRandomInt(60,100);
-	  const steal = getRandomInt(30,100);
-	  const block = getRandomInt(20,70);
-	  const speed = getRandomInt(60,100);
-	  const strength = getRandomInt(35,85);
-	  const vert = getRandomInt(100,60);
+    // const shootingIn = getRandomInt(20,70);
+	  // const shootingOut = getRandomInt(60,100);
+	  // const handling = getRandomInt(60,100);
+	  // const passing = getRandomInt(60,100);
+	  // const steal = getRandomInt(30,100);
+	  // const block = getRandomInt(20,70);
+	  // const speed = getRandomInt(60,100);
+	  // const strength = getRandomInt(35,85);
+	  // const vert = getRandomInt(100,60);
 
-    const { error, isLoaded, items } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
+  
     return (
       <div className="App">
         my app
@@ -112,10 +129,10 @@ class App extends Component {
         <div className="new-player">
         
         </div>
-        <SocialCard />
+        <SocialCard state={this.state}/>
       </div>
     );
-  }
+  
   }
 }
 

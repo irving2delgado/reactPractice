@@ -5,11 +5,26 @@ class IconBox extends Component  {
         super(props);
     }
   
-    const 
+    componentDidMount(){
+        return (
+            this.playerBio
+        )
+        
+      }
+  
     render () {
-        console.log(this.props.info);
+        
+        const playerBio = (props) => {
+            return ( 
+            <div>{props.results[0].name.first }</div>
+            )
+          }
+        console.log(this.props);
         return(
             <div>
+               <ul>
+                  
+               </ul>
                 {this.props.info.data[0].bio}
             </div>
         )
