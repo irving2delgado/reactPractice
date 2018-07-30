@@ -31,7 +31,8 @@ class IconBox extends Component  {
         return(
             <div>
                <ul>
-                  { shootingIn } { shootingOut }
+                  Shooting: { shootingIn }  
+                   { shootingOut } { handling } { passing } { steal } { block }
                </ul>
                 
             </div>

@@ -43,6 +43,7 @@ class SocialCard extends Component {
                 <ul>
                 {this.props.state.results.map((result, i) => 
                        <li key={i} >
+                       
                         {result.name.first} {result.name.last}
                         <IconBox props={this.props}/>
                        </li>
