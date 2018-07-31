@@ -25,15 +25,32 @@ class IconBox extends Component  {
         const speed = getRandomInt(60,100);
         const strength = getRandomInt(35,85);
         const vert = getRandomInt(100,60);
+
+        const divStyle = {
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            margin: '40px',
+            border: '5px solid'
+          };
       
        
         
         return(
-            <div>
+            <div style={divStyle}>
                <ul>
-                  Shooting: { shootingIn }  
-                   { shootingOut } { handling } { passing } { steal } { block }
-               </ul>
+                <h4>Skill</h4>
+                <li>Inside: {shootingIn}</li>
+                <li>Shooting: {shootingOut}</li>
+                <li>Ball Handling: {handling}</li>
+                <li>Passing: {passing}</li>
+                </ul>
+                <ul>
+                <h4>Physical</h4>
+                <li>Inside: {shootingIn}</li>
+                <li>Shooting: {shootingOut}</li>
+                <li>Ball Handling: {handling}</li>
+                <li>Passing: {passing}</li>
+                </ul>
                 
             </div>
         )
