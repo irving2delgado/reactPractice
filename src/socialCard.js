@@ -40,7 +40,7 @@ class SocialCard extends Component {
           console.log(this.props);
         return(
             <div>
-                <ul>
+                <ul style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr"}}>
                 {this.props.state.results.map((result, i) => 
                        <li key={i} >
                        

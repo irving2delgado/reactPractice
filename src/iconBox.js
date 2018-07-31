@@ -41,14 +41,14 @@ class IconBox extends Component  {
                 <h4>Skill</h4>
                 <li>Inside: {shootingIn}</li>
                 <li>Shooting: {shootingOut}</li>
-                <li>Ball Handling: {handling}</li>
+                <li>Handling: {handling}</li>
                 <li>Passing: {passing}</li>
                 </ul>
                 <ul>
                 <h4>Physical</h4>
                 <li>Inside: {shootingIn}</li>
                 <li>Shooting: {shootingOut}</li>
-                <li>Ball Handling: {handling}</li>
+                <li>Handling: {handling}</li>
                 <li>Passing: {passing}</li>
                 </ul>
                 
