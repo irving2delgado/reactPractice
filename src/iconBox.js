@@ -29,8 +29,8 @@ class IconBox extends Component  {
         const divStyle = {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            margin: '20px',
-            border: '5px solid'
+            margin: '10px',
+            
           };
       
        
