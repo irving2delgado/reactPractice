@@ -65,12 +65,7 @@ class App extends Component {
   
     return (
       <div className="App">
-        my app
-        <button onClick={this.createPlayer}>This is a button</button>
-
-        <div className="new-player">
         
-        </div>
         <SocialCard state={this.state}/>
       </div>
     );

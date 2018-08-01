@@ -29,7 +29,7 @@ class IconBox extends Component  {
         const divStyle = {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            margin: '40px',
+            margin: '20px',
             border: '5px solid'
           };
       
@@ -37,14 +37,14 @@ class IconBox extends Component  {
         
         return(
             <div style={divStyle}>
-               <ul>
+               <ul style={{listStyleType:"none", fontSize:"15px", lineHeight:"25px", padding:"15px"}}>
                 <h4>Skill</h4>
                 <li>Inside: {shootingIn}</li>
                 <li>Shooting: {shootingOut}</li>
                 <li>Handling: {handling}</li>
                 <li>Passing: {passing}</li>
                 </ul>
-                <ul>
+                <ul style={{listStyleType:"none", fontSize:"15px", lineHeight:"25px", padding:"15px"}}>
                 <h4>Physical</h4>
                 <li>Inside: {shootingIn}</li>
                 <li>Shooting: {shootingOut}</li>
