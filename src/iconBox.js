@@ -46,10 +46,10 @@ class IconBox extends Component  {
                 </ul>
                 <ul style={{listStyleType:"none", fontSize:"15px", lineHeight:"25px", padding:"15px"}}>
                 <h4>Physical</h4>
-                <li>Inside: {shootingIn}</li>
-                <li>Shooting: {shootingOut}</li>
-                <li>Handling: {handling}</li>
-                <li>Passing: {passing}</li>
+                <li>Steal: {shootingIn}</li>
+                <li>Block: {shootingOut}</li>
+                <li>Speed: {handling}</li>
+                <li>Vert: {passing}</li>
                 </ul>
                 
             </div>
