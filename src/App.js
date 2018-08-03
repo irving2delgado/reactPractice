@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import SocialCard from './socialCard';
 import axios from 'axios';
+import {
+  Switch, Route, BrowserRouter
+} from 'react-router-dom';
 
 class App extends Component {
   constructor (props) {
@@ -13,37 +16,6 @@ class App extends Component {
 
   }
 
-    /* createPlayer() {
-      
-        fetch("https://randomuser.me/api/?gender=male&nat=uss")
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
-                isLoaded: true,
-               results: result.results
-              });
-    
-              // console.log(this.state.results);
-              // console.log(this.props.player);
-            },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
-          .then(
-            console.log(this.state.results)
-          )
-          return 
-        (<div>{this.state.results[0].name.first}</div>);
-      }; */
-    
 
   componentDidMount(){
     this.getPerson();
@@ -64,10 +36,17 @@ class App extends Component {
 
   
     return (
-      <div className="App">
+      <BrowserRouter>
+      <Switch>
+        <Route exact path="/players" render={ props => {
+          return (
+            <SocialCard 
+            state={this.state}/>
+          );
+        } }/>
         
-        <SocialCard state={this.state}/>
-      </div>
+      </Switch>
+      </BrowserRouter>
     );
   
   }
