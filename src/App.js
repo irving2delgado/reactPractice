@@ -5,6 +5,7 @@ import axios from 'axios';
 import {
   Switch, Route, BrowserRouter
 } from 'react-router-dom';
+import Homepage from './components/Homepage';
 
 class App extends Component {
   constructor (props) {
@@ -44,6 +45,11 @@ class App extends Component {
             state={this.state}/>
           );
         } }/>
+        <Route exact path="/" render={ ()=> {
+          return (
+            <Homepage />
+          )
+        }}/>
         
       </Switch>
       </BrowserRouter>
